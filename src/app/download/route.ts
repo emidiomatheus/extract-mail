@@ -1,6 +1,5 @@
 import { NextRequest } from "next/server";
 import { writeFileSync, readFileSync } from "fs";
-import path from "path";
 
 export async function POST(request: NextRequest) {
     if (request.method !== 'POST') {
@@ -19,7 +18,7 @@ export async function POST(request: NextRequest) {
         files += parsedFile + '\n'
     })
 
-    const filePath = path.join(process.cwd(), 'src/assets', 'emails.txt');
+    const filePath = '/tmp/file.txt';
 
     writeFileSync(filePath, files)
     const file = readFileSync(filePath)
