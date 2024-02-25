@@ -16,6 +16,10 @@ export function Dropzone() {
 
     const onDrop = useCallback(async (acceptedFiles: File[]) => {
         const parsedFilenames = acceptedFiles.map(file => {
+            if (file.name.includes('.com')) {
+                return file.name.replace('.key', '').replace('.txt', '')
+            }
+            
             return file.name.replace('key', 'com').replace('.txt', '')
         })
 
