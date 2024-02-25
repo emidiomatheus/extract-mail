@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
         files += parsedFile + '\n'
     })
 
-    writeFileSync('src/assets/emails.txt', files)
+    writeFileSync('./src/assets/emails.txt', files)
     const file = readFileSync('src/assets/emails.txt')
 
     return new Response(file, {
