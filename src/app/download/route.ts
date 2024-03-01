@@ -12,8 +12,14 @@ export async function POST(request: NextRequest) {
 
     let files = ''
 
-    data.forEach(file => {
-        const parsedFile = file.replace('.key', '.com')
+    data.forEach(filename => {
+        let parsedFile = '';
+
+        if (filename.includes('.com')) {
+            parsedFile = filename.replace('.key', '').replace('.txt', '')
+        }
+        
+        parsedFile = filename.replace('key', 'com').replace('.txt', '')
 
         files += parsedFile + '\n'
     })

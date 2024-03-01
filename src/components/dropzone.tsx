@@ -53,7 +53,7 @@ export function Dropzone() {
                 />
             </div>
             <div
-                className={`w-1/2 h-[300px] border-2 ${isDragActive ? 'border-blue-600' : 'border-blue-950'} hover:border-blue-900 transition-colors cursor-pointer border-dashed rounded p-4 flex items-center justify-center outline-none`}
+                className={`w-1/2 h-[300px] border-2 ${isDragActive ? 'border-blue-600 bg-blue-950' : 'border-blue-950'} hover:border-blue-900 hover:bg-slate-900 transition-colors cursor-pointer border-dashed rounded p-4 flex items-center justify-center outline-none`}
                 {...getRootProps()}
             >
                 <input {...getInputProps()} />
